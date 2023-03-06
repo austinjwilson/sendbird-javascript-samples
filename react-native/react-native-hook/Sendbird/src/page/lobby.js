@@ -95,15 +95,17 @@ const Lobby = props => {
 
   return (
     <>
-      {initialized ? (
+      {/* {initialized ? (
         currentUser ? (
           <Channels {...props} currentUser={currentUser} />
         ) : (
           <Login {...props} onLogin={login} />
         )
-      ) : (
-        <View />
-      )}
+      ) : ( */}
+      <View>
+        <Text>Hello</Text>
+      </View>
+      {/* )} */}
     </>
   );
 };

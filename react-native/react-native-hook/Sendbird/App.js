@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Platform } from 'react-native';
+import { Platform, View, Text } from 'react-native';
 import SendBird from 'sendbird';
 
 import { AppContext } from './src/context';
@@ -68,16 +68,19 @@ const App = () => {
   }, []);
 
   return (
+    // <View>
+    //   <Text>WTF</Text>
+    // </View>
     <NavigationContainer>
-      <AppContext.Provider value={initialState}>
-        <Stack.Navigator>
+      {/* <AppContext.Provider value={initialState}> */}
+        <Stack.Navigator initialRouteName="Lobby">
           <Stack.Screen name="Lobby" component={Lobby} options={{ ...defaultHeaderOptions }} />
           <Stack.Screen name="Chat" component={Chat} options={{ ...defaultHeaderOptions }} />
           <Stack.Screen name="Member" component={Member} options={{ ...defaultHeaderOptions }} />
           <Stack.Screen name="Invite" component={Invite} options={{ ...defaultHeaderOptions }} />
           <Stack.Screen name="Profile" component={Profile} options={{ ...defaultHeaderOptions }} />
         </Stack.Navigator>
-      </AppContext.Provider>
+      {/* </AppContext.Provider> */}
     </NavigationContainer>
   );
 };
